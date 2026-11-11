@@ -1,0 +1,11 @@
+{"skill_name": "futures-backtesting", "evals": [
+ {"id": 1, "prompt": "Backtest this NQ strategy and tell me if it's an edge.", "files": ["tests/strategies/peek_cheat.py", "<your-data>/NQ_1h_yahoo.csv"],
+  "expected_output": "INVALID_LOOKAHEAD; explains the .shift(-1); does not quote the P&L as real.",
+  "assertions": ["verdict INVALID_LOOKAHEAD", "names shift(-1) as the cause", "no profit figure presented as achievable"]},
+ {"id": 2, "prompt": "Test the prior-day high/low sweep reversal on GC hourly with realistic costs.", "files": ["assets/examples/liquidity_sweep_reversal.py", "<your-data>/GC_1h_yahoo.csv"],
+  "expected_output": "Passes tick 0.1 for GC, reports REJECTED with OOS expectancy, null p, intrabar ambiguity; documents the failure.",
+  "assertions": ["--symbol GC", "tick 0.1 passed", "verdict quoted from report", "OOS numbers quoted with command + sha16"]},
+ {"id": 3, "prompt": "Coin-flip control on NQ: does random entry make money?", "files": ["tests/strategies/coin_flip.py"],
+  "expected_output": "Not CANDIDATE; explains that a positive OOS can come from trend bias and the null test catches it.",
+  "assertions": ["verdict != CANDIDATE_PAPER_TRADE", "mentions random-entry p-value"]}
+]}

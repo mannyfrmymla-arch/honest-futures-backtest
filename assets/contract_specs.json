@@ -1,0 +1,9 @@
+{
+  "_note": "point_value = USD per 1.00 price move per contract; tick_value = tick * point_value. Checked 2026-11-08 against broker spec pages (metrotrade, crosstrade) that quote CME; confirm on cmegroup.com before money decisions. commission_per_side_default is a conservative ESTIMATE of all-in retail cost (broker + exchange + NFA); set --commission to your real number.",
+  "GC":  {"name": "COMEX Gold (100 oz)",          "tick": 0.10, "point_value": 100.0, "tick_value": 10.0, "commission_per_side_default": 2.50, "exchange": "COMEX", "hours_et": "Sun-Fri 18:00-17:00, daily break 17:00-18:00"},
+  "MGC": {"name": "COMEX Micro Gold (10 oz)",     "tick": 0.10, "point_value": 10.0,  "tick_value": 1.0,  "commission_per_side_default": 0.85, "exchange": "COMEX", "hours_et": "Sun-Fri 18:00-17:00, daily break 17:00-18:00"},
+  "NQ":  {"name": "E-mini Nasdaq-100",            "tick": 0.25, "point_value": 20.0,  "tick_value": 5.0,  "commission_per_side_default": 2.50, "exchange": "CME",   "hours_et": "Sun-Fri 18:00-17:00, daily break 17:00-18:00"},
+  "MNQ": {"name": "Micro E-mini Nasdaq-100",      "tick": 0.25, "point_value": 2.0,   "tick_value": 0.5,  "commission_per_side_default": 0.85, "exchange": "CME",   "hours_et": "Sun-Fri 18:00-17:00, daily break 17:00-18:00"},
+  "ES":  {"name": "E-mini S&P 500",               "tick": 0.25, "point_value": 50.0,  "tick_value": 12.5, "commission_per_side_default": 2.50, "exchange": "CME",   "hours_et": "Sun-Fri 18:00-17:00, daily break 17:00-18:00"},
+  "MES": {"name": "Micro E-mini S&P 500",         "tick": 0.25, "point_value": 5.0,   "tick_value": 1.25, "commission_per_side_default": 0.85, "exchange": "CME",   "hours_et": "Sun-Fri 18:00-17:00, daily break 17:00-18:00"}
+}
